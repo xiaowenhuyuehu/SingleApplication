@@ -162,7 +162,7 @@ bool SingleApplication::sendMessage( QByteArray message, int timeout )
     Q_D(SingleApplication);
 
     // Nobody to connect to
-    if( isPrimary() ) return false;
+    //if( isPrimary() ) return false; //we would send message to myself when current process is primary.
 
     // Make sure the socket is connected
     d->connectToPrimary( timeout,  SingleApplicationPrivate::Reconnect );
